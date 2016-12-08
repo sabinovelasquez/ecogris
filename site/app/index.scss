@@ -1,0 +1,26 @@
+@import './core/css/functions';
+@import './core/css/colors';
+@import './core/css/common';
+@import './core/css/logo';
+
+// @import url(https://fonts.googleapis.com/css?family=Cinzel:400,700);
+
+body, html{
+  height: 100%;
+}
+
+.glyphicon {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-chevron-left:before {
+  content: "\f053";
+}
+.glyphicon-chevron-right:before {
+  content: "\f054";
+}
