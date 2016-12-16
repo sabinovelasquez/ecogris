@@ -29,7 +29,7 @@ function appendToCat() {
     if(item.notes) {
       fancytitle += ' <br><small>'+item.notes+'</small>';
     }
-    var newLi = '<li><a class="fancy" rel="catalog" href="img/portfolio/'+item.photo+'" title="'+fancytitle+'"><img src="img/portfolio/'+item.photo+'" alt="'+item.name+'" /><div class="text"><p>'+item.name+'</p><p class="price">'+item.price+'</p><p class="description">'+item.desc+'<br><small>'+item.notes+'</small></p></div></a></li>';
+    var newLi = '<li><a class="fancy" rel="catalog" href="img/portfolio/'+item.photo+'" data="'+item.name+'" title="'+fancytitle+'"><img src="img/portfolio/'+item.photo+'" alt="'+item.name+'" /><div class="text"><p>'+item.name+'</p><p class="price">'+item.price+'</p><p class="description">'+item.desc+'<br><small>'+item.notes+'</small></p></div></a></li>';
     if (item.published === 'si'){
       $("#portfolio ul").append(newLi);
     }
@@ -51,11 +51,15 @@ function appendToCat() {
   if ($('.parallax-background-partners').length) {
     $(".parallax-background-partners").parallax();
   } 
+  $("#portfolio ul li a").click(function() {
+    var escultura = $(this).attr('data');
+    ga('send', 'event', 'Detalle Escultura', 'click', 'Click en: '+ escultura);
+  });
+    
   // Fancybox
   $('.fancy').fancybox({
       helpers    : {
-        title : { type : 'inside' },
-        buttons : {}
+        title : { type : 'inside' }
       }
     });
 
