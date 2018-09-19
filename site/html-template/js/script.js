@@ -1,6 +1,6 @@
 
 //Catalog
-var spreadsheetID = '1_AOS3qX58_yfJr_JP4psZ5g3hKOsSbQqna-_jdQF8bU',
+var spreadsheetID = '1iV7e16u0WFSWWXHqUVmR1RCkYJ34AFbbTm5QEFH9Czc',
 url = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetID + '/od6/public/values?alt=json',
 CatItem = function(){},
 catalog = [];
@@ -11,7 +11,7 @@ $.getJSON(url, function(data) {
     var catitem = new CatItem();
     catitem.photo= item.gsx$foto.$t;
     catitem.name= item.gsx$nombre.$t;
-    catitem.desc= item.gsx$descripción.$t;
+    catitem.desc= item.gsx$desc.$t;
     catitem.notes= item.gsx$notas.$t;
     catitem.price= item.gsx$precio.$t;
     catitem.published= item.gsx$publicar.$t;
